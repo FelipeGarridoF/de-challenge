@@ -4,11 +4,11 @@ This Readme contains the steps to run the Data Engineer Challenge Locally using 
 
 To deploy you need to have docker installed in your computer, after that you have to enter the following command
 
-docker pull felipegarridof/fgarrido-de-challenge:final
+docker pull felipegarridof/fgarrido-de-challenge:latest
 
 With that you will download an image with the project, after this you need to execute the following command to run the docker image
 
-docker run -v {INSERTDATAPATH}:/data-processed felipegarridof/fgarrido-de-challenge:final
+docker run -v {INSERTDATAPATH}:/data-processed felipegarridof/fgarrido-de-challenge:latest
 
 you need to replace the value {INSERTDATAPATH} with the path in your local where you have the consoles.csv and result.csv data. Also you can replace it with ${PWD}, so it will run in your current location
 

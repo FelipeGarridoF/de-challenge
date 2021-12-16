@@ -1,5 +1,5 @@
+
 from pyspark.sql.dataframe import DataFrame as df
-from os import error
 from pathlib import Path
 
 from settings.schemas import ( 
@@ -23,13 +23,10 @@ class DataReader:
         self.spark_session = spark
 
     def get_console_data(self):
-        try:
-            self.console_df = self.spark_session.read.load(CONSOLES_DATA_PATH,format=CONSOLES_FORMAT, header="true" , schema=CONSOLE_SCHEMA)
-        except Exception as error:
-            print ("There was an issue reading the console data "+error)
+
+        self.console_df = self.spark_session.read.load(CONSOLES_DATA_PATH,format=CONSOLES_FORMAT, header="true" , schema=CONSOLE_SCHEMA)
 
     def get_result_data(self):
-        try:
-            self.result_df = self.spark_session.read.load(RESULT_DATA_PATH,format=RESULT_FORMAT, header="true" , schema=RESULT_SCHEMA)
-        except Exception as error:
-            print ("There was an issue reading the result data "+error)
+
+        self.result_df = self.spark_session.read.load(RESULT_DATA_PATH,format=RESULT_FORMAT, header="true" , schema=RESULT_SCHEMA)
+
